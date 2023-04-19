@@ -1,3 +1,27 @@
+- var imageTop = ["bricks"]
+- var imageLateral = ["bricks"]
+- var imageBottom = ["bricks"]
+- var items = [0]
+
+mixin cubes(index)
+    article.cube
+        div.cube__sides
+            picture.side.side--1
+                img(src="../imgs/" + imageTop[index] + ".png", alt=imageTop[index])
+            picture.side.side--2
+                img(src="../imgs/" + imageLateral[index] + ".png", alt=imageLateral[index])
+            picture.side.side--3
+                img(src="../imgs/" + imageLateral[index] + ".png", alt=imageLateral[index])
+            picture.side.side--4
+                img(src="../imgs/" + imageLateral[index] + ".png", alt=imageLateral[index])
+            picture.side.side--5
+                img(src="../imgs/" + imageLateral[index] + ".png", alt=imageLateral[index])
+            picture.side.side--6
+                img(src="../imgs/" + imageBottom[index] + ".png", alt=imageBottom[index])
+        div.cube__shadow
+
+
+
 doctype html
 html(lang="en")
     head
@@ -9,12 +33,5 @@ html(lang="en")
 
     body
         section.container
-            article.cube
-                div.cube__sides
-                    div.side.side--1
-                    div.side.side--2
-                    div.side.side--3
-                    div.side.side--4
-                    div.side.side--5
-                    div.side.side--6
-                div.cube__shadow
+            each item in items
+                +cubes(item)
