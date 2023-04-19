@@ -3,3 +3,101 @@
     padding: 0;
     margin: 0;
 }
+
+.container {
+    background-color: #bebebe;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 50px 30px;
+}
+
+.cube {
+    width: 200px;
+    height: 250px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__sides {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: CubeAnimation 4s linear infinite;
+        z-index: 2;
+
+        .side {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(235,72,114,1) 100%);
+        }
+
+        .side--1 {
+            transform: rotateX(90deg) translateZ(50px);
+        }
+        .side--2 {
+            transform: translateZ(50px);
+        }
+        .side--3 {
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+        .side--4 {
+            transform: rotateY(-180deg) translateZ(50px);
+        }
+        .side--5 {
+            transform: rotateY(-270deg) translateZ(50px);
+        }
+        .side--6 {
+            transform: rotateX(270deg) translateZ(50px);
+        }
+    }
+
+    &__shadow {
+        background-color: #333;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        bottom: 20px;
+        transform-style: preserve-3d;
+        animation: ShadowAnimation 4s linear infinite;
+        z-index: 1;
+    }
+}
+
+@keyframes CubeAnimation {
+    0% {
+        transform: rotateX(-30deg) rotateY(0deg) translateY(0px);
+    }
+
+    50% {
+        transform: rotateX(-30deg) rotateY(180deg) translateY(-50px);
+    }
+
+    100% {
+        transform: rotateX(-30deg) rotateY(360deg) translateY(0px);
+    }
+}
+
+@keyframes ShadowAnimation {
+    0% {
+        transform: rotateX(60deg) rotateZ(0deg) scale(1);
+        filter: blur(5px);
+    }
+
+    50% {
+        transform: rotateX(60deg) rotateZ(-180deg) scale(1.1);
+        filter: blur(15px);
+    }
+
+    100% {
+        transform: rotateX(60deg) rotateZ(-360deg) scale(1);
+        filter: blur(5px);
+    }
+}
