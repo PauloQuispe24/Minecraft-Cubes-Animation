@@ -10,6 +10,8 @@
 
 - var imageBottom = ["dirt", "dirt", "treeBottom", "wood", "stone", "bricks", "diamond", "gold", "redstone", "magma", "wood", "wood", "ovenTB", "chestTB", "tntBottom"]
 
+- var cubesName = ["grass", "dirt", "tree", "wood", "stone", "bricks", "diamond", "gold", "redstone", "magma", "table", "bookshelf", "oven", "chest", "tnt"]
+
 - var items = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 
 
@@ -17,17 +19,17 @@ mixin cubes(index)
     article.cube
         div.cube__sides
             picture.side.side--1
-                img(src="../imgs/" + imageTop[index] + ".png", alt=imageTop[index])
+                img(src="../imgs/" + imageTop[index] + ".png", alt=cubesName[index])
             picture.side.side--2
-                img(src="../imgs/" + imageLateral_1[index] + ".png", alt=imageLateral_1[index])
+                img(src="../imgs/" + imageLateral_1[index] + ".png", alt=cubesName[index])
             picture.side.side--3
-                img(src="../imgs/" + imageLateral_2[index] + ".png", alt=imageLateral_2[index])
+                img(src="../imgs/" + imageLateral_2[index] + ".png", alt=cubesName[index])
             picture.side.side--4
-                img(src="../imgs/" + imageLateral_3[index] + ".png", alt=imageLateral_3[index])
+                img(src="../imgs/" + imageLateral_3[index] + ".png", alt=cubesName[index])
             picture.side.side--5
-                img(src="../imgs/" + imageLateral_4[index] + ".png", alt=imageLateral_4[index])
+                img(src="../imgs/" + imageLateral_4[index] + ".png", alt=cubesName[index])
             picture.side.side--6
-                img(src="../imgs/" + imageBottom[index] + ".png", alt=imageBottom[index])
+                img(src="../imgs/" + imageBottom[index] + ".png", alt=cubesName[index])
         div.cube__shadow
 
 
